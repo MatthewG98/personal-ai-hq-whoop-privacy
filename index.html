@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex, nofollow">
+<title>Privacy Policy — Personal AI HQ: WHOOP Integration</title>
+<style>
+  :root { color-scheme: light dark; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+    max-width: 720px;
+    margin: 2rem auto;
+    padding: 0 1.25rem 3rem;
+    color: #1a1a1a;
+    background: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e6e6e6; background: #121212; }
+    a { color: #7eb8ff; }
+  }
+  h1 { font-size: 1.6rem; margin-top: 1.5rem; }
+  h2 { font-size: 1.15rem; margin-top: 2rem; }
+  p, li { font-size: 0.98rem; }
+  .meta { font-size: 0.88rem; opacity: 0.75; margin-top: 0.25rem; }
+  .status {
+    border-left: 3px solid #999;
+    padding: 0.6rem 0.9rem;
+    margin: 1.2rem 0 1.5rem;
+    background: rgba(128,128,128,0.08);
+    font-size: 0.95rem;
+  }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.9em; }
+</style>
+</head>
+<body>
+
+<h1>Privacy Policy — Personal AI HQ: WHOOP Integration</h1>
+<p class="meta">Last updated: 2026-11-10</p>
+
+<div class="status">
+  <strong>Status: in development, not yet operational.</strong>
+  As of the "Last updated" date above, the WHOOP developer application for this integration has not yet been
+  successfully registered, no OAuth authorisation has taken place, no WHOOP data has been retrieved, no Google
+  Drive storage has been set up, and no synchronisation to OpenAI / ChatGPT has occurred. No end-user data is
+  being processed today. This policy describes the intended data handling of the integration if and when it
+  becomes operational. It will be revised if the implementation differs from what is described here, with the
+  date above updated.
+</div>
+
+<h2>Who this policy would cover</h2>
+<p>
+  "Personal AI HQ — WHOOP" is intended as a private, single-user software integration to be built and operated by
+  <strong>Matthew Greenshields</strong> for his own personal use. It is not a product offered to anyone else.
+  The sole intended data subject and sole intended end user would be Matthew Greenshields. No other person's data
+  would be collected or processed.
+</p>
+
+<h2>What data the integration would collect</h2>
+<p>
+  Once operational, the integration would use the official WHOOP Developer API with OAuth 2.0 to retrieve the
+  following data from Matthew Greenshields' own WHOOP member account, using read-only scopes only:
+</p>
+<ul>
+  <li>Recovery score and recovery-related heart-rate-variability values (scope: <code>read:recovery</code>).</li>
+  <li>Daily "cycle" summaries including strain and aggregated heart-rate values (scope: <code>read:cycles</code>).</li>
+  <li>Sleep duration, performance and sleep-stage summaries (scope: <code>read:sleep</code>).</li>
+  <li>Workout summaries including sport type, strain and aggregated heart-rate values (scope: <code>read:workout</code>).</li>
+</ul>
+<p>
+  No write access to the WHOOP account would be requested or used. No data about any other person would be collected.
+  No location data, payment data, or contact lists would be collected.
+</p>
+<p>
+  This public policy page itself does not use cookies, analytics, advertising identifiers, or any third-party trackers,
+  and loads no external resources. This is true today and is intended to remain true for as long as the page is hosted.
+</p>
+
+<h2>Where data would be stored</h2>
+<ul>
+  <li>
+    <strong>WHOOP OAuth credentials</strong> (the client ID and client secret issued by WHOOP, plus any refresh and
+    access tokens later issued during an OAuth authorisation) would be held in the macOS Keychain on Matthew's
+    personal Mac. On Apple-silicon Macs this storage is hardware-backed by the Secure Enclave.
+  </li>
+  <li>
+    <strong>Summarised health metrics</strong> — derived daily summaries in plain-text form — would be written to a
+    private Google Drive folder tied to Matthew's personal Google account. No such folder exists today; it would be
+    created only if and when the integration begins operating. The Google Drive folder would not be shared with any
+    other Google account.
+  </li>
+  <li>
+    <strong>Any OpenAI / ChatGPT synchronisation is conditional and does not occur today.</strong>
+    It would begin only if Matthew (a) completes the integration and (b) explicitly adds the Google Drive folder as a
+    source inside his personal ChatGPT project. In that case OpenAI's ChatGPT connector service would synchronise
+    copies of the summary files to OpenAI's systems in order to index them for retrieval during Matthew's own queries,
+    governed by OpenAI's own published data policies for ChatGPT connectors. If the Drive source is removed, or the
+    connector is disconnected, OpenAI would no longer sync further copies.
+  </li>
+  <li>
+    This integration would not operate any databases, public servers, or third-party cloud functions. No data would
+    be transmitted to any party other than WHOOP (for the API calls), Google (for storage in Matthew's own Drive)
+    and — only under the conditions described above — OpenAI.
+  </li>
+  <li>
+    Raw WHOOP API responses are not intended to be persisted to disk beyond what is needed to produce the summary files.
+  </li>
+</ul>
+
+<h2>Retention — intended approach</h2>
+<p>
+  The exact retention behaviour will be finalised during implementation, and this policy will be updated if it
+  changes. The current intent is:
+</p>
+<ul>
+  <li>Summarised daily, weekly and monthly metrics would be kept for as long as they remain useful for Matthew's own training review, and could be deleted by him at any time.</li>
+  <li>Raw WHOOP API responses would not be retained.</li>
+  <li>Any logs produced by the integration would not contain health data, credentials, or tokens.</li>
+</ul>
+
+<h2>Who would be able to access the data</h2>
+<ul>
+  <li>Matthew Greenshields, through his macOS user account and his personal Google account.</li>
+  <li>
+    The ChatGPT model, when Matthew queries his own "Personal AI HQ" ChatGPT Plus project with the Google Drive source
+    enabled — and only to the extent permitted by OpenAI's ChatGPT connector data policies.
+  </li>
+  <li>WHOOP would receive only the standard OAuth 2.0 and API traffic required to serve the data requests the integration makes.</li>
+  <li>Google would receive only the file-upload and file-sync traffic required to keep the private Drive folder in sync with Matthew's Mac.</li>
+  <li>No other party would be granted access. The integration would not be shared with, licensed to, or used on behalf of any other person.</li>
+</ul>
+
+<h2>Deletion — intended approach</h2>
+<p>
+  The concrete deletion mechanisms will depend on how the integration is ultimately implemented and on the controls
+  WHOOP, Google and OpenAI expose. The intended approach is that, once operational, Matthew would be able to fully
+  remove data processed by this integration by some combination of the following, as applicable:
+</p>
+<ul>
+  <li>Revoking the application's access to his WHOOP account using WHOOP's own privacy / connected-apps controls.</li>
+  <li>Removing the related items from the macOS Keychain.</li>
+  <li>Deleting the Google Drive folder that stores the summary files.</li>
+  <li>Removing the Google Drive source from his ChatGPT project and, if desired, deleting the project.</li>
+  <li>Deleting the local project directory on the Mac.</li>
+</ul>
+<p>
+  No formal deletion-request process is required because the data subject and operator would be the same person.
+</p>
+
+<h2>Security measures — intended</h2>
+<ul>
+  <li>Only read-only WHOOP scopes would be requested at OAuth authorisation time.</li>
+  <li>OAuth 2.0 Authorization Code flow with PKCE (S256) is the intended authentication flow.</li>
+  <li>
+    The OAuth authorisation callback is intended to use a loopback redirect
+    (<code>http://127.0.0.1</code> on Matthew's Mac). The authorisation code returned by WHOOP would be received
+    locally by a short-lived listener on the device and then exchanged directly with WHOOP's token endpoint over HTTPS
+    — the standard OAuth 2.0 code-for-token exchange — to obtain the access and refresh tokens. The authorisation
+    code would not be intentionally retained after this exchange and would not be sent to any unrelated third party.
+  </li>
+  <li>Credentials would be held in the macOS Keychain and would not be written to project files, shell history, or version control.</li>
+  <li>Tokens and health data would not be printed to logs or standard output.</li>
+  <li>This integration does not expose any public HTTP endpoints today and is not intended to expose any.</li>
+  <li>The Google Drive folder containing summaries would be private and would not be shared with any other Google account.</li>
+</ul>
+
+<h2>Changes to this policy</h2>
+<p>
+  If the integration's data handling changes materially, this policy will be revised and the "Last updated" date above
+  will be changed. There is no mailing list because there are no external users.
+</p>
+
+<h2>Contact</h2>
+<p>
+  Owner: Matthew Greenshields. Any privacy-related question related to this app can be directed to the contact
+  details Matthew provides to WHOOP as part of the developer application registration.
+</p>
+
+</body>
+</html>
